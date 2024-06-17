@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+    int data;
+    struct Node *Next;
+};
+void linkedlisttraversal(struct Node *ptr){
+    while(ptr!= NULL){
+        printf("\n element:%d",ptr->data);
+        ptr=ptr->Next;
+    }
+}
+int main(){
+    struct Node* Head;
+    struct Node* Second;
+    struct Node* Third;
+    struct Node* Fourth;
+
+    Head = (struct Node*)malloc(sizeof(struct Node));
+    Second = (struct Node*)malloc(sizeof(struct Node));
+    Third = (struct Node*)malloc(sizeof(struct Node));
+    Fourth = (struct Node*)malloc(sizeof(struct Node));
+
+    Head->data=7;
+    Head->Next=Second;
+    Second->data=3;
+    Second->Next=Third;
+    Third->data=5;
+    Third->Next=Fourth;
+    Fourth->data=9;
+    Fourth->Next=NULL;
+
+    linkedlisttraversal(Head);
+    return 0;
+}
